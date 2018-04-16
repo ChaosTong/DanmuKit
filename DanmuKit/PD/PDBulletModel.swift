@@ -17,10 +17,12 @@ public struct PDBulletModel {
     public var type = ""
     public var content = ""
     public var nn = ""
+    public var level = 0
     
     init(v: JSON) {
         self.type = v["type"].stringValue
         self.content = v["data"]["content"].stringValue
         self.nn = v["data"]["from"]["nickName"].stringValue
+        self.level = v["data"]["from"]["level"].intValue
     }
 }

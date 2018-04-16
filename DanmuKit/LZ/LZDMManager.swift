@@ -36,7 +36,7 @@ public class LZDMManager: NSObject, WebSocketDelegate {
     /**
      断开链接
      */
-    func cutoff() {
+    public func cutoff() {
         if let _ = lz_socket {
             lz_socket?.disconnect()
             print("---断开龙珠弹幕---")

@@ -98,7 +98,7 @@ public class BASocketTool: NSObject {
     /**
      断开链接
      */
-    func cutoff() {
+    public func cutoff() {
         print("断开链接")
         line = 0
         let pack = "type@=logout/".packToData

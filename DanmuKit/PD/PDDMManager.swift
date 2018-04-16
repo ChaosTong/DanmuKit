@@ -145,7 +145,7 @@ public class PDDManager: NSObject, GCDAsyncSocketDelegate {
         print("---发送心跳包---")
     }
     
-    func cutOffSocket() {
+    public func cutOffSocket() {
         self.connectTimer?.invalidate()
         self.socket.disconnect()
     }

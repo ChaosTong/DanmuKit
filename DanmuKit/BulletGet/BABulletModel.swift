@@ -62,7 +62,7 @@ public struct BABulletModel {
     public var bdlv = 0
     public var ifs = 0
     
-    public var color = SWColor.white
+    public var color = SWColor.black
     
     init(dict: Dict) {
         self.nn = dict["nn"] ?? "nn"
