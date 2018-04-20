@@ -24,7 +24,8 @@ class ViewController: UIViewController {
         
 //        BASocketTool.shared.connectSocketWithRoomId(roomId: "67373")
 
-//        LZDMManager.manager.connectWebSocketWithRoomId(roomId: "2241164")
+        LZDMManager.manager.connectWebSocketWithRoomId(roomId: "2241164")
+        LZAnalyzerCenter.shared.beginObserving()
         
 //        let dict = "{\"errno\":0,\"errmsg\":\"\",\"data\":{\"appid\":\"134224728\",\"rid\":-90335253,\"sign\":\"ac512ba66bf171998b9f747eb086d2d0\",\"authType\":\"4\",\"ts\":1523846853000,\"chat_addr_list\":[\"115.159.247.235:443\",\"118.89.11.13:8080\",\"118.89.11.13:443\",\"115.159.247.235:8080\"]}}"
 //        if let jsonStr = dict.data(using: String.Encoding.utf8, allowLossyConversion: false) {

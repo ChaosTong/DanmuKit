@@ -14,6 +14,7 @@
 		C48189352078B26C009664AA /* NSString+InfoGet.m in Sources */ = {isa = PBXBuildFile; fileRef = C48189332078B26C009664AA /* NSString+InfoGet.m */; };
 		C48189362078B26C009664AA /* NSString+InfoGet.h in Headers */ = {isa = PBXBuildFile; fileRef = C48189342078B26C009664AA /* NSString+InfoGet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C48189382078BFC3009664AA /* PDSocketTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48189372078BFC3009664AA /* PDSocketTool.swift */; };
+		C4840BE9208A77830089391F /* LZAnalyzerCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4840BE8208A77830089391F /* LZAnalyzerCenter.swift */; };
 		C484F77420762D7E00111CB5 /* DanmuKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C484F77220762D7E00111CB5 /* DanmuKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C484F77B20762DBD00111CB5 /* DMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F77A20762DBD00111CB5 /* DMManager.swift */; };
 		C484F7DC207697F600111CB5 /* BATransModelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F7CB207697F600111CB5 /* BATransModelTool.swift */; };
@@ -52,6 +53,7 @@
 		C48189332078B26C009664AA /* NSString+InfoGet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InfoGet.m"; sourceTree = "<group>"; };
 		C48189342078B26C009664AA /* NSString+InfoGet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InfoGet.h"; sourceTree = "<group>"; };
 		C48189372078BFC3009664AA /* PDSocketTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDSocketTool.swift; sourceTree = "<group>"; };
+		C4840BE8208A77830089391F /* LZAnalyzerCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZAnalyzerCenter.swift; sourceTree = "<group>"; };
 		C484F76F20762D7E00111CB5 /* DanmuKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DanmuKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484F77220762D7E00111CB5 /* DanmuKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DanmuKit.h; sourceTree = "<group>"; };
 		C484F77320762D7E00111CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				C484F80B2077D27F00111CB5 /* LZBulletModel.swift */,
 				C484F80D2077D36D00111CB5 /* LZGiftModel.swift */,
 				C48188C1207898E3009664AA /* Extension+Data.swift */,
+				C4840BE8208A77830089391F /* LZAnalyzerCenter.swift */,
 			);
 			path = LZ;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				C48189382078BFC3009664AA /* PDSocketTool.swift in Sources */,
 				C48188C620789AAC009664AA /* PDBulletModel.swift in Sources */,
 				C484F7E3207697F600111CB5 /* BAAnalyzerCenter.swift in Sources */,
+				C4840BE9208A77830089391F /* LZAnalyzerCenter.swift in Sources */,
 				C48188C020788A0E009664AA /* PDDMManager.swift in Sources */,
 				C48188C4207899CB009664AA /* PDTransModelTool.swift in Sources */,
 				C484F80C2077D27F00111CB5 /* LZBulletModel.swift in Sources */,
@@ -479,6 +483,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/DanmuKit/CommonFiles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,6 +519,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/DanmuKit/CommonFiles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
