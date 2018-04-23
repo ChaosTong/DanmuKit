@@ -32,7 +32,7 @@ class BATransModelTool {
             subData.getBytes(&_length, range: NSMakeRange(0, 4))
             _length -= 8
             //截取相对应的数据
-            if _length <= subData.length - 12 {
+            if _length <= subData.length - 12 && _length > 0 {
                 let contentData = subData.subdata(with: NSMakeRange(12, _length))
                 let content = NSString.init(data: contentData, encoding: String.Encoding.utf8.rawValue)
                 subData = (data as NSData).subdata(with: NSMakeRange(_length+_location, data.count-_length-_location)) as NSData

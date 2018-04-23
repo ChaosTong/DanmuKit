@@ -87,6 +87,7 @@ public class PDDManager: NSObject, GCDAsyncSocketDelegate {
             let endCode_2: Int16 = data.scanValue(start: data.count - 2, length: 1)
             
             if (endCode_1 == enCode && endCode_2 == enCode) {
+                if data.count < 4 { return  }
                 let a: Int16 = data.scanValue(start: 1, length: 1)
                 let b: Int16 = data.scanValue(start: 3, length: 1)
                 
