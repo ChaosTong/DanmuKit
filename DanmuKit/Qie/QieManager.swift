@@ -8,14 +8,18 @@
 
 import Foundation
 
+let MAXRESETCOUNT: Int = 10
+
 public class QieManager: NSObject {
     
     private let url = "https://wdanmaku.egame.qq.com/cgi-bin/pgg_barrage_async_fcgi"
     private var anchor_id = 0
     private var vid = ""
+    private var roomid = ""
     private var last_tm = 0
     private var isOnline = false
-    private var heartbeatTimer = Timer()
+    private var resetFlag = 0
+    private var heartbeatTimer: DispatchSourceTimer! = DispatchSource.makeTimerSource(flags:DispatchSource.TimerFlags.init(rawValue: 0) , queue: nil)
     
     public class var shared: QieManager {
         struct Static {
@@ -44,6 +48,7 @@ public class QieManager: NSObject {
     }
     
     public func linkQie(_ roomid: String) {
+        self.roomid = roomid
         self.getVid(roomid) { (done) in
             if let done = done, done == true {
                 self.startHeartbeat()
@@ -52,15 +57,16 @@ public class QieManager: NSObject {
     }
     
     private func startHeartbeat() {
-        heartbeatTimer.invalidate()
-        heartbeatTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(heartBeat), userInfo: nil, repeats: true)
-        RunLoop.current.add(heartbeatTimer, forMode: .commonModes)
-        heartbeatTimer.fire()
+        heartbeatTimer.schedule(deadline: DispatchTime.now(), repeating: 1.0)
+        heartbeatTimer.setEventHandler {
+            self.heartBeat()
+        }
+        heartbeatTimer.resume()
     }
     
     public func cutoff() {
         print("断开链接")
-        heartbeatTimer.invalidate()
+        if heartbeatTimer != nil { heartbeatTimer.suspend() }
     }
     
     @objc private func heartBeat() {
@@ -72,7 +78,18 @@ public class QieManager: NSObject {
             guard let last_tm = json["data"]["0"]["retBody"]["data"]["last_tm"].int else { return }
             guard let msg_list = json["data"]["0"]["retBody"]["data"]["msg_list"].array else { return }
             self.last_tm = last_tm
-            print(msg_list.count,self.last_tm)
+            if (msg_list.count == 0 && self.isOnline) {
+                self.resetFlag += 1
+            } else if self.isOnline {
+                self.resetFlag = 0
+            }
+            if self.resetFlag > MAXRESETCOUNT {
+                self.cutoff()
+                self.linkQie(self.roomid)
+            }
+            msg_list.forEach({ (json) in
+                print(json["nick"].stringValue,json["content"].stringValue, "\n")
+            })
         }
     }
 }

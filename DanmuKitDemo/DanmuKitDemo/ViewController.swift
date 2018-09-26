@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(pdBullet(_:)), name: NSNotification.Name.init("PDNotificationBullet"), object: nil)
         
-//        BASocketTool.shared.connectSocketWithRoomId(roomId: "74960")
+        BASocketTool.shared.connectSocketWithRoomId(roomId: "265438")
 
 //        LZDMManager.manager.connectWebSocketWithRoomId(roomId: "2241164")
 //        LZAnalyzerCenter.shared.beginObserving()
@@ -33,8 +33,7 @@ class ViewController: UIViewController {
 //            PDDManager.shared.connectSocketWithPandaInfo(info: pandaInfo.init(v: json))
 //        }
         
-//        QieManager.shared.startTolink("497383565_1537932699")
-        QieManager.shared.linkQie("77777")
+//        QieManager.shared.linkQie("77777")
     }
 
     @objc func gift(_ noti: Notification) {

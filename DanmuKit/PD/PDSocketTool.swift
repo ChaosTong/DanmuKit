@@ -12,7 +12,7 @@ public class PDSocketTool: NSObject {
 
     var socket = GCDAsyncSocket()
     
-    var heartbeatTimer = Timer()
+    var heartbeatTimer: DispatchSourceTimer! = DispatchSource.makeTimerSource(flags:DispatchSource.TimerFlags.init(rawValue: 0) , queue: nil)
     var serviceConnected = false
     var roomConnected = false
     var contentData = Data()
@@ -67,10 +67,11 @@ public class PDSocketTool: NSObject {
      开始发送心跳消息
      */
     func startHeartbeat() {
-        heartbeatTimer.invalidate()
-        heartbeatTimer = Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(heartBeat), userInfo: nil, repeats: true)
-        RunLoop.current.add(heartbeatTimer, forMode: .commonModes)
-        heartbeatTimer.fire()
+        heartbeatTimer.schedule(deadline: DispatchTime.now(), repeating: 300.0)
+        heartbeatTimer.setEventHandler {
+            self.heartBeat()
+        }
+        heartbeatTimer.resume()
         print("---发送心跳包---")
     }
     @objc func heartBeat() {
@@ -82,7 +83,7 @@ public class PDSocketTool: NSObject {
      */
     func cutoff() {
         print("断开链接")
-        heartbeatTimer.invalidate()
+        if heartbeatTimer != nil { heartbeatTimer.suspend() }
         socket.disconnect()
     }
     func receiveMemoryWarning() {
