@@ -13,6 +13,12 @@ Danmu easy to get
   s.source           = { :git => 'https://github.com/ChaosTong/DanmuKit.git', :tag => s.version.to_s }
  
   s.ios.deployment_target = '9.0'
+
+   s.subspec 'Network' do |n|
+    n.source_files = 'Classes/Network/**/*'
+    n.dependency 'Alamofire'
+  end
+
   s.source_files = 'DanmuKit/*.{h,m,swift}'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.1' }
  

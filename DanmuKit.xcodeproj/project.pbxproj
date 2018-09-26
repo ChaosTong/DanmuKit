@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FDA2EAE215B2AAC000D1EEF /* QieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2EAD215B2AAC000D1EEF /* QieManager.swift */; };
+		0FDA2EC6215B5915000D1EEF /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2EC4215B5915000D1EEF /* Helper.swift */; };
+		0FDA2EC7215B5915000D1EEF /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2EC5215B5915000D1EEF /* NetWork.swift */; };
 		C48188C020788A0E009664AA /* PDDMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48188BF20788A0E009664AA /* PDDMManager.swift */; };
 		C48188C2207898E3009664AA /* Extension+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48188C1207898E3009664AA /* Extension+Data.swift */; };
 		C48188C4207899CB009664AA /* PDTransModelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48188C3207899CB009664AA /* PDTransModelTool.swift */; };
@@ -46,6 +49,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FDA2EAD215B2AAC000D1EEF /* QieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QieManager.swift; sourceTree = "<group>"; };
+		0FDA2EC4215B5915000D1EEF /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		0FDA2EC5215B5915000D1EEF /* NetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
 		C48188BF20788A0E009664AA /* PDDMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDDMManager.swift; sourceTree = "<group>"; };
 		C48188C1207898E3009664AA /* Extension+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Data.swift"; sourceTree = "<group>"; };
 		C48188C3207899CB009664AA /* PDTransModelTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDTransModelTool.swift; sourceTree = "<group>"; };
@@ -99,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FDA2EAC215B2A7F000D1EEF /* Qie */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA2EAD215B2AAC000D1EEF /* QieManager.swift */,
+			);
+			path = Qie;
+			sourceTree = "<group>";
+		};
 		C484F76520762D7E00111CB5 = {
 			isa = PBXGroup;
 			children = (
@@ -119,12 +133,15 @@
 		C484F77120762D7E00111CB5 /* DanmuKit */ = {
 			isa = PBXGroup;
 			children = (
+				0FDA2EAC215B2A7F000D1EEF /* Qie */,
 				C484F8112078886D00111CB5 /* PD */,
 				C484F7F22077B5F900111CB5 /* LZ */,
 				C484F7CA207697F600111CB5 /* BulletGet */,
 				C484F80F2077DC0600111CB5 /* CommonFiles */,
 				C484F77A20762DBD00111CB5 /* DMManager.swift */,
 				C484F8082077C96E00111CB5 /* include.h */,
+				0FDA2EC4215B5915000D1EEF /* Helper.swift */,
+				0FDA2EC5215B5915000D1EEF /* NetWork.swift */,
 				C484F8072077C55700111CB5 /* module.modulemap */,
 			);
 			path = DanmuKit;
@@ -326,6 +343,7 @@
 				C484F7E4207697F600111CB5 /* GCDAsyncUdpSocket.m in Sources */,
 				C484F8062077C3AE00111CB5 /* WebSocket.swift in Sources */,
 				C484F7F82077BB6D00111CB5 /* SwiftyJSON.swift in Sources */,
+				0FDA2EC6215B5915000D1EEF /* Helper.swift in Sources */,
 				C484F7DE207697F600111CB5 /* CTBigbangBox.swift in Sources */,
 				C48188C2207898E3009664AA /* Extension+Data.swift in Sources */,
 				C48189382078BFC3009664AA /* PDSocketTool.swift in Sources */,
@@ -333,8 +351,10 @@
 				C484F7E3207697F600111CB5 /* BAAnalyzerCenter.swift in Sources */,
 				C4840BE9208A77830089391F /* LZAnalyzerCenter.swift in Sources */,
 				C48188C020788A0E009664AA /* PDDMManager.swift in Sources */,
+				0FDA2EC7215B5915000D1EEF /* NetWork.swift in Sources */,
 				C48188C4207899CB009664AA /* PDTransModelTool.swift in Sources */,
 				C484F80C2077D27F00111CB5 /* LZBulletModel.swift in Sources */,
+				0FDA2EAE215B2AAC000D1EEF /* QieManager.swift in Sources */,
 				C484F7E5207697F600111CB5 /* GCDAsyncSocket.m in Sources */,
 				C484F7E2207697F600111CB5 /* BASocketTool.swift in Sources */,
 			);

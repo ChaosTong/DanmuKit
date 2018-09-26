@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C47F7A5A2084452700855AE7 /* DanmuKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C47F7A56208442BB00855AE7 /* DanmuKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0FDA2ED1215B94F0000D1EEF /* DanmuKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDA2EBF215B5854000D1EEF /* DanmuKit.framework */; };
+		0FDA2ED2215B94F0000D1EEF /* DanmuKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDA2EBF215B5854000D1EEF /* DanmuKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C484F78920762ECC00111CB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F78820762ECC00111CB5 /* AppDelegate.swift */; };
 		C484F78B20762ECC00111CB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F78A20762ECC00111CB5 /* ViewController.swift */; };
 		C484F78E20762ECC00111CB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C484F78C20762ECC00111CB5 /* Main.storyboard */; };
@@ -16,32 +17,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C47F7A55208442BB00855AE7 /* PBXContainerItemProxy */ = {
+		0FDA2EBE215B5854000D1EEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C47F7A51208442BB00855AE7 /* DanmuKit.xcodeproj */;
+			containerPortal = 0FDA2EBA215B5854000D1EEF /* DanmuKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C484F76F20762D7E00111CB5;
+			remoteInfo = DanmuKit;
+		};
+		0FDA2ED3215B94F0000D1EEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FDA2EBA215B5854000D1EEF /* DanmuKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C484F76E20762D7E00111CB5;
 			remoteInfo = DanmuKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C47F7A592084452000855AE7 /* CopyFiles */ = {
+		0FDA2ED5215B94F0000D1EEF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C47F7A5A2084452700855AE7 /* DanmuKit.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C484F7A82076316100111CB5 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
+				0FDA2ED2215B94F0000D1EEF /* DanmuKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,7 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C47F7A51208442BB00855AE7 /* DanmuKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DanmuKit.xcodeproj; path = ../DanmuKit.xcodeproj; sourceTree = "<group>"; };
+		0FDA2EBA215B5854000D1EEF /* DanmuKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DanmuKit.xcodeproj; path = ../DanmuKit.xcodeproj; sourceTree = "<group>"; };
 		C484F78520762ECC00111CB5 /* DanmuKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanmuKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484F78820762ECC00111CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C484F78A20762ECC00111CB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,16 +63,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FDA2ED1215B94F0000D1EEF /* DanmuKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C47F7A52208442BB00855AE7 /* Products */ = {
+		0FDA2EBB215B5854000D1EEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C47F7A56208442BB00855AE7 /* DanmuKit.framework */,
+				0FDA2EBF215B5854000D1EEF /* DanmuKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,7 +81,7 @@
 		C484F77C20762ECC00111CB5 = {
 			isa = PBXGroup;
 			children = (
-				C47F7A51208442BB00855AE7 /* DanmuKit.xcodeproj */,
+				0FDA2EBA215B5854000D1EEF /* DanmuKit.xcodeproj */,
 				C484F78720762ECC00111CB5 /* DanmuKitDemo */,
 				C484F78620762ECC00111CB5 /* Products */,
 			);
@@ -118,12 +118,12 @@
 				C484F78120762ECC00111CB5 /* Sources */,
 				C484F78220762ECC00111CB5 /* Frameworks */,
 				C484F78320762ECC00111CB5 /* Resources */,
-				C484F7A82076316100111CB5 /* Embed Frameworks */,
-				C47F7A592084452000855AE7 /* CopyFiles */,
+				0FDA2ED5215B94F0000D1EEF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0FDA2ED4215B94F0000D1EEF /* PBXTargetDependency */,
 			);
 			name = DanmuKitDemo;
 			productName = DanmuKitDemo;
@@ -158,8 +158,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C47F7A52208442BB00855AE7 /* Products */;
-					ProjectRef = C47F7A51208442BB00855AE7 /* DanmuKit.xcodeproj */;
+					ProductGroup = 0FDA2EBB215B5854000D1EEF /* Products */;
+					ProjectRef = 0FDA2EBA215B5854000D1EEF /* DanmuKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -170,11 +170,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C47F7A56208442BB00855AE7 /* DanmuKit.framework */ = {
+		0FDA2EBF215B5854000D1EEF /* DanmuKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = DanmuKit.framework;
-			remoteRef = C47F7A55208442BB00855AE7 /* PBXContainerItemProxy */;
+			remoteRef = 0FDA2EBE215B5854000D1EEF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -203,6 +203,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FDA2ED4215B94F0000D1EEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DanmuKit;
+			targetProxy = 0FDA2ED3215B94F0000D1EEF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C484F78C20762ECC00111CB5 /* Main.storyboard */ = {
