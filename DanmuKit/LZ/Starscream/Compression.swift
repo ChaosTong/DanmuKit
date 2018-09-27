@@ -27,7 +27,8 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 import Foundation
-import SSCZLib
+import CommonCrypto
+import zlib
 
 class Decompressor {
     private var strm = z_stream()

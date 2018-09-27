@@ -70,7 +70,8 @@ public class QieManager: NSObject {
     }
     
     @objc private func heartBeat() {
-        let params: [String: Any] = [ "param": ["0": ["module": "pgg_live_barrage_svr", "method": "get_barrage", "param": ["anchor_id": anchor_id, "vid": vid, "last_tm": last_tm, "other_uid": 0]]], "app_info": ["platform": 2, "terminal_type": 4, "version_code": 0, "version_name": 0, "pvid": 5459329024, "ssid": 518073344, "imel": 0]]
+        let pvid: Int64 = 5459329024
+        let params: [String: Any] = [ "param": ["0": ["module": "pgg_live_barrage_svr", "method": "get_barrage", "param": ["anchor_id": anchor_id, "vid": vid, "last_tm": last_tm, "other_uid": 0]]], "app_info": ["platform": 2, "terminal_type": 4, "version_code": 0, "version_name": 0, "pvid": pvid, "ssid": 518073344, "imel": 0]]
         
         Enough.requestForJSON(method: .get, url: url, params: params) { (json, error) in
             if let _ = error { return }
