@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DanmuKit'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'easy to get danmu from douyu panda qie and longzhu'
  
   s.description      = <<-DESC
