@@ -21,15 +21,18 @@ public class LZAnalyzerCenter: NSObject {
     public var sentenceArray = [BASentenceModel]()
     public var popSentenceArray = [BASentenceModel]()
     var timeRepeatCount = 0
-    var repeatTimer = Timer()
+    var repeatTimer: DispatchSourceTimer! = DispatchSource.makeTimerSource(flags:DispatchSource.TimerFlags.init(rawValue: 0) , queue: nil)
     var isAnalyzing = false
     
     public func beginObserving() {
         isAnalyzing = true
         NotificationCenter.default.addObserver(self, selector: #selector(bullet(_:)), name: NSNotification.Name.init("LZNotificationBullet"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(gift(_:)), name: NSNotification.Name.init("LZNotificationGift"), object: nil)
-        repeatTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(sortData), userInfo: nil, repeats: true)
-        RunLoop.current.add(repeatTimer, forMode: .commonModes)
+        repeatTimer.schedule(deadline: DispatchTime.now(), repeating: 5.0)
+        repeatTimer.setEventHandler {
+            self.sortData()
+        }
+        repeatTimer.resume()
     }
     
     public func endAnalyzing() {
