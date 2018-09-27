@@ -143,8 +143,6 @@
 				C484F80F2077DC0600111CB5 /* CommonFiles */,
 				C484F77A20762DBD00111CB5 /* DMManager.swift */,
 				C484F8082077C96E00111CB5 /* include.h */,
-				0FDA2EC4215B5915000D1EEF /* Helper.swift */,
-				0FDA2EC5215B5915000D1EEF /* NetWork.swift */,
 				C484F8072077C55700111CB5 /* module.modulemap */,
 			);
 			path = DanmuKit;
@@ -224,6 +222,8 @@
 		C484F80F2077DC0600111CB5 /* CommonFiles */ = {
 			isa = PBXGroup;
 			children = (
+				0FDA2EC4215B5915000D1EEF /* Helper.swift */,
+				0FDA2EC5215B5915000D1EEF /* NetWork.swift */,
 				C484F7F72077BB6D00111CB5 /* SwiftyJSON.swift */,
 				C484F77320762D7E00111CB5 /* Info.plist */,
 				C484F77220762D7E00111CB5 /* DanmuKit.h */,
@@ -288,7 +288,7 @@
 		C484F76620762D7E00111CB5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = ChaosTong;
 				TargetAttributes = {
 					C484F76E20762D7E00111CB5 = {
@@ -492,7 +492,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9Y74876TPS;
@@ -529,7 +529,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9Y74876TPS;

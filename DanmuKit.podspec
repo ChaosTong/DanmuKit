@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = 'easy to get danmu from douyu panda qie and longzhu'
  
   s.description      = <<-DESC
-Danmu easy to get
+Danmu easy to get, easy to get danmu from douyu panda qie and longzhu
                        DESC
  
   s.homepage         = 'https://github.com/ChaosTong/DanmuKit'

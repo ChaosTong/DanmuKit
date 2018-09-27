@@ -32,8 +32,6 @@ public class Helper {
             valueString = (value as! Double).description
         case _ as Int:
             valueString = (value as! Int).description
-        case _ as [String: Any]:
-            valueString = JSON.init(value).description
         default:
             break
         }
