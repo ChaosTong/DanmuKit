@@ -29,7 +29,7 @@ public class BASocketTool: NSObject {
     var socket = GCDAsyncSocket()
 //    let defaultSocket: BASocketTool? = nil
     
-    var heartbeatTimer = Timer()
+    var heartbeatTimer: DispatchSourceTimer! = DispatchSource.makeTimerSource(flags:DispatchSource.TimerFlags.init(rawValue: 0) , queue: nil)
     var roomId = ""
     var serviceConnected = false
     var roomConnected = false
@@ -86,10 +86,11 @@ public class BASocketTool: NSObject {
      开始发送心跳消息
      */
     func startHeartbeat() {
-        heartbeatTimer.invalidate()
-        heartbeatTimer = Timer.scheduledTimer(timeInterval: 40, target: self, selector: #selector(heartBeat), userInfo: nil, repeats: true)
-        RunLoop.current.add(heartbeatTimer, forMode: .commonModes)
-        heartbeatTimer.fire()
+        heartbeatTimer.schedule(deadline: DispatchTime.now(), repeating: 30.0)
+        heartbeatTimer.setEventHandler {
+            self.heartBeat()
+        }
+        heartbeatTimer.resume()
     }
     @objc func heartBeat() {
         let pack = ("type@=keeplive/tick@=%\(String().timeString)/").packToData
@@ -103,7 +104,7 @@ public class BASocketTool: NSObject {
         line = 0
         let pack = "type@=logout/".packToData
         socket.write(pack, withTimeout: BAReadTimeOut, tag: 1)
-        heartbeatTimer.invalidate()
+        if heartbeatTimer != nil { heartbeatTimer.suspend() }
         socket.disconnect()
     }
     /**

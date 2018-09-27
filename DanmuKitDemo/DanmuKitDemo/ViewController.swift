@@ -22,16 +22,20 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(pdBullet(_:)), name: NSNotification.Name.init("PDNotificationBullet"), object: nil)
         
-//        BASocketTool.shared.connectSocketWithRoomId(roomId: "67373")
-
-        LZDMManager.manager.connectWebSocketWithRoomId(roomId: "2241164")
-        LZAnalyzerCenter.shared.beginObserving()
+        NotificationCenter.default.addObserver(self, selector: #selector(qieBullet(_:)), name: NSNotification.Name.init("QIENotificationBullet"), object: nil)
         
-//        let dict = "{\"errno\":0,\"errmsg\":\"\",\"data\":{\"appid\":\"134224728\",\"rid\":-90335253,\"sign\":\"ac512ba66bf171998b9f747eb086d2d0\",\"authType\":\"4\",\"ts\":1523846853000,\"chat_addr_list\":[\"115.159.247.235:443\",\"118.89.11.13:8080\",\"118.89.11.13:443\",\"115.159.247.235:8080\"]}}"
+//        BASocketTool.shared.connectSocketWithRoomId(roomId: "265438")
+
+//        LZDMManager.manager.connectWebSocketWithRoomId(roomId: "2241164")
+//        LZAnalyzerCenter.shared.beginObserving()
+        
+//        let dict = "{\"errno\":0,\"errmsg\":\"\",\"data\":{\"appid\":\"134287728\",\"rid\":-49325502,\"sign\":\"016464201d55793f17faff41a2be0453\",\"authType\":\"4\",\"ts\":1537929846000,\"chat_addr_list\":[\"118.89.11.38:443\",\"118.89.11.13:443\"]}}"
 //        if let jsonStr = dict.data(using: String.Encoding.utf8, allowLossyConversion: false) {
 //            let json = JSON(data: jsonStr)
 //            PDDManager.shared.connectSocketWithPandaInfo(info: pandaInfo.init(v: json))
 //        }
+        
+        QieManager.shared.linkQie("77777")
     }
 
     @objc func gift(_ noti: Notification) {
@@ -77,6 +81,16 @@ class ViewController: UIViewController {
             if let array = dict["Bullet"] as? [PDBulletModel] {
                 array.forEach({ (m) in
                     print("弹幕🥚",m.description)
+                })
+            }
+        }
+    }
+    
+    @objc func qieBullet(_ noti: Notification) {
+        if let dict = noti.userInfo {
+            if let array = dict["Bullet"] as? [QieBulletModel] {
+                array.forEach({ (m) in
+                    print("弹幕🐧",m.description)
                 })
             }
         }

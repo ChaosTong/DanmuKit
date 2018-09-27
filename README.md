@@ -1,6 +1,6 @@
 # DanmuKitDemo
 
-> 一款方便iOS/macOS接入直播平台(龙珠游戏直播/斗鱼直播/熊猫直播)弹幕的Kit，只要知道房间号，然后接收通知就好了，so fucking easy
+> 一款方便iOS/macOS接入直播平台(龙珠游戏直播/斗鱼直播/熊猫直播/企鹅电竞)弹幕的Kit，只要知道房间号，然后接收通知就好了，so fucking easy
 
 ## Usage
 
