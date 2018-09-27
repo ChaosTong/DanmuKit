@@ -13,7 +13,7 @@ Danmu easy to get, easy to get danmu from douyu panda qie and longzhu
   s.source           = { :git => 'https://github.com/ChaosTong/DanmuKit.git', :tag => s.version.to_s }
  
   s.ios.deployment_target = '10.0'
-  s.source_files = 'DanmuKit/*.{h,m,swift}'
+  s.source_files = 'DanmuKit/**/*.{h,m,swift}'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
  
 end
