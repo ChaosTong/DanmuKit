@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'DanmuKit'
-  s.version          = '0.0.1'
-  s.summary          = 'easy to get danmu from douyu panda and longzhu'
+  s.version          = '1.0.1'
+  s.summary          = 'easy to get danmu from douyu panda qie and longzhu'
  
   s.description      = <<-DESC
 Danmu easy to get
@@ -12,14 +12,8 @@ Danmu easy to get
   s.author           = { "ChaosTong" => "easyulife@gmail.com" }
   s.source           = { :git => 'https://github.com/ChaosTong/DanmuKit.git', :tag => s.version.to_s }
  
-  s.ios.deployment_target = '9.0'
-
-   s.subspec 'Network' do |n|
-    n.source_files = 'Classes/Network/**/*'
-    n.dependency 'Alamofire'
-  end
-
+  s.ios.deployment_target = '10.0'
   s.source_files = 'DanmuKit/*.{h,m,swift}'
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.1' }
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
  
 end
