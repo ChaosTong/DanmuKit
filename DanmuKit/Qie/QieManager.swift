@@ -87,9 +87,11 @@ public class QieManager: NSObject {
                 self.cutoff()
                 self.linkQie(self.roomid)
             }
+            var array = [QieBulletModel]()
             msg_list.forEach({ (json) in
-                print(json["nick"].stringValue,json["content"].stringValue, "\n")
+                array.append(QieBulletModel.init(v: json))
             })
+            NotificationCenter.default.post(name: NSNotification.Name.init("QIENotificationBullet"), object: nil, userInfo: ["Bullet" : array])
         }
     }
 }

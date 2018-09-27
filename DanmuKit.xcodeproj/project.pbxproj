@@ -10,6 +10,7 @@
 		0FDA2EAE215B2AAC000D1EEF /* QieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2EAD215B2AAC000D1EEF /* QieManager.swift */; };
 		0FDA2EC6215B5915000D1EEF /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2EC4215B5915000D1EEF /* Helper.swift */; };
 		0FDA2EC7215B5915000D1EEF /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2EC5215B5915000D1EEF /* NetWork.swift */; };
+		0FDA2ED8215C7FC9000D1EEF /* QieBulletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2ED7215C7FC9000D1EEF /* QieBulletModel.swift */; };
 		C48188C020788A0E009664AA /* PDDMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48188BF20788A0E009664AA /* PDDMManager.swift */; };
 		C48188C2207898E3009664AA /* Extension+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48188C1207898E3009664AA /* Extension+Data.swift */; };
 		C48188C4207899CB009664AA /* PDTransModelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48188C3207899CB009664AA /* PDTransModelTool.swift */; };
@@ -52,6 +53,7 @@
 		0FDA2EAD215B2AAC000D1EEF /* QieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QieManager.swift; sourceTree = "<group>"; };
 		0FDA2EC4215B5915000D1EEF /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		0FDA2EC5215B5915000D1EEF /* NetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
+		0FDA2ED7215C7FC9000D1EEF /* QieBulletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QieBulletModel.swift; sourceTree = "<group>"; };
 		C48188BF20788A0E009664AA /* PDDMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDDMManager.swift; sourceTree = "<group>"; };
 		C48188C1207898E3009664AA /* Extension+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Data.swift"; sourceTree = "<group>"; };
 		C48188C3207899CB009664AA /* PDTransModelTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDTransModelTool.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				0FDA2EAD215B2AAC000D1EEF /* QieManager.swift */,
+				0FDA2ED7215C7FC9000D1EEF /* QieBulletModel.swift */,
 			);
 			path = Qie;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				C484F7EA207697F600111CB5 /* BASentenceModel.swift in Sources */,
 				C484F8052077C3AE00111CB5 /* SSLSecurity.swift in Sources */,
 				C484F7E9207697F600111CB5 /* BABulletModel.swift in Sources */,
+				0FDA2ED8215C7FC9000D1EEF /* QieBulletModel.swift in Sources */,
 				C484F7EE20769A0F00111CB5 /* GBigbangBox.m in Sources */,
 				C484F7F42077B61F00111CB5 /* LZDMManager.swift in Sources */,
 				C484F7E1207697F600111CB5 /* Extension+Color.swift in Sources */,
