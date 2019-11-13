@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3B167F237BEAD400EEE562 /* huya.js in Resources */ = {isa = PBXBuildFile; fileRef = 0F3B167E237BEAD400EEE562 /* huya.js */; };
 		0FDA2ED1215B94F0000D1EEF /* DanmuKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDA2EBF215B5854000D1EEF /* DanmuKit.framework */; };
 		0FDA2ED2215B94F0000D1EEF /* DanmuKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDA2EBF215B5854000D1EEF /* DanmuKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C484F78920762ECC00111CB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F78820762ECC00111CB5 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F3B167E237BEAD400EEE562 /* huya.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = huya.js; path = ../../DanmuKit/Huya/huya.js; sourceTree = "<group>"; };
 		0FDA2EBA215B5854000D1EEF /* DanmuKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DanmuKit.xcodeproj; path = ../DanmuKit.xcodeproj; sourceTree = "<group>"; };
 		C484F78520762ECC00111CB5 /* DanmuKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanmuKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484F78820762ECC00111CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		C484F78720762ECC00111CB5 /* DanmuKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0F3B167E237BEAD400EEE562 /* huya.js */,
 				C484F78820762ECC00111CB5 /* AppDelegate.swift */,
 				C484F78A20762ECC00111CB5 /* ViewController.swift */,
 				C484F78C20762ECC00111CB5 /* Main.storyboard */,
@@ -142,6 +145,7 @@
 				TargetAttributes = {
 					C484F78420762ECC00111CB5 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -185,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C484F79320762ECF00111CB5 /* LaunchScreen.storyboard in Resources */,
+				0F3B167F237BEAD400EEE562 /* huya.js in Resources */,
 				C484F79020762ECF00111CB5 /* Assets.xcassets in Resources */,
 				C484F78E20762ECC00111CB5 /* Main.storyboard in Resources */,
 			);

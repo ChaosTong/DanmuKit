@@ -7,18 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FDA2EAE215B2AAC000D1EEF /* QieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2EAD215B2AAC000D1EEF /* QieManager.swift */; };
+		0F3B167D237BEA8400EEE562 /* huya.js in Resources */ = {isa = PBXBuildFile; fileRef = 0F3B167C237BEA8400EEE562 /* huya.js */; };
+		0F3B1681237BEE9700EEE562 /* SSLClientCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B1680237BEE9700EEE562 /* SSLClientCertificate.swift */; };
 		0FDA2EC6215B5915000D1EEF /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2EC4215B5915000D1EEF /* Helper.swift */; };
 		0FDA2EC7215B5915000D1EEF /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2EC5215B5915000D1EEF /* NetWork.swift */; };
-		0FDA2ED8215C7FC9000D1EEF /* QieBulletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2ED7215C7FC9000D1EEF /* QieBulletModel.swift */; };
-		C48188C020788A0E009664AA /* PDDMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48188BF20788A0E009664AA /* PDDMManager.swift */; };
-		C48188C2207898E3009664AA /* Extension+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48188C1207898E3009664AA /* Extension+Data.swift */; };
-		C48188C4207899CB009664AA /* PDTransModelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48188C3207899CB009664AA /* PDTransModelTool.swift */; };
-		C48188C620789AAC009664AA /* PDBulletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48188C520789AAC009664AA /* PDBulletModel.swift */; };
+		0FE2737B237BDEF30075E166 /* huya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE27379237BDEF30075E166 /* huya.swift */; };
 		C48189352078B26C009664AA /* NSString+InfoGet.m in Sources */ = {isa = PBXBuildFile; fileRef = C48189332078B26C009664AA /* NSString+InfoGet.m */; };
 		C48189362078B26C009664AA /* NSString+InfoGet.h in Headers */ = {isa = PBXBuildFile; fileRef = C48189342078B26C009664AA /* NSString+InfoGet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C48189382078BFC3009664AA /* PDSocketTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48189372078BFC3009664AA /* PDSocketTool.swift */; };
-		C4840BE9208A77830089391F /* LZAnalyzerCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4840BE8208A77830089391F /* LZAnalyzerCenter.swift */; };
 		C484F77420762D7E00111CB5 /* DanmuKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C484F77220762D7E00111CB5 /* DanmuKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C484F77B20762DBD00111CB5 /* DMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F77A20762DBD00111CB5 /* DMManager.swift */; };
 		C484F7DC207697F600111CB5 /* BATransModelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F7CB207697F600111CB5 /* BATransModelTool.swift */; };
@@ -38,30 +33,22 @@
 		C484F7EA207697F600111CB5 /* BASentenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F7DB207697F600111CB5 /* BASentenceModel.swift */; };
 		C484F7ED20769A0F00111CB5 /* GBigbangBox.h in Headers */ = {isa = PBXBuildFile; fileRef = C484F7EB20769A0E00111CB5 /* GBigbangBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C484F7EE20769A0F00111CB5 /* GBigbangBox.m in Sources */ = {isa = PBXBuildFile; fileRef = C484F7EC20769A0E00111CB5 /* GBigbangBox.m */; };
-		C484F7F42077B61F00111CB5 /* LZDMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F7F32077B61F00111CB5 /* LZDMManager.swift */; };
 		C484F7F82077BB6D00111CB5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F7F72077BB6D00111CB5 /* SwiftyJSON.swift */; };
 		C484F8002077C30800111CB5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C484F7FF2077C30800111CB5 /* libz.tbd */; };
 		C484F8042077C3AE00111CB5 /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F8012077C3AE00111CB5 /* Compression.swift */; };
 		C484F8052077C3AE00111CB5 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F8022077C3AE00111CB5 /* SSLSecurity.swift */; };
 		C484F8062077C3AE00111CB5 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F8032077C3AE00111CB5 /* WebSocket.swift */; };
 		C484F8092077C96E00111CB5 /* include.h in Headers */ = {isa = PBXBuildFile; fileRef = C484F8082077C96E00111CB5 /* include.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C484F80C2077D27F00111CB5 /* LZBulletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F80B2077D27F00111CB5 /* LZBulletModel.swift */; };
-		C484F80E2077D36D00111CB5 /* LZGiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F80D2077D36D00111CB5 /* LZGiftModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0FDA2EAD215B2AAC000D1EEF /* QieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QieManager.swift; sourceTree = "<group>"; };
+		0F3B167C237BEA8400EEE562 /* huya.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = huya.js; sourceTree = "<group>"; };
+		0F3B1680237BEE9700EEE562 /* SSLClientCertificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLClientCertificate.swift; sourceTree = "<group>"; };
 		0FDA2EC4215B5915000D1EEF /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		0FDA2EC5215B5915000D1EEF /* NetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
-		0FDA2ED7215C7FC9000D1EEF /* QieBulletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QieBulletModel.swift; sourceTree = "<group>"; };
-		C48188BF20788A0E009664AA /* PDDMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDDMManager.swift; sourceTree = "<group>"; };
-		C48188C1207898E3009664AA /* Extension+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Data.swift"; sourceTree = "<group>"; };
-		C48188C3207899CB009664AA /* PDTransModelTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDTransModelTool.swift; sourceTree = "<group>"; };
-		C48188C520789AAC009664AA /* PDBulletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBulletModel.swift; sourceTree = "<group>"; };
+		0FE27379237BDEF30075E166 /* huya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = huya.swift; sourceTree = "<group>"; };
 		C48189332078B26C009664AA /* NSString+InfoGet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InfoGet.m"; sourceTree = "<group>"; };
 		C48189342078B26C009664AA /* NSString+InfoGet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InfoGet.h"; sourceTree = "<group>"; };
-		C48189372078BFC3009664AA /* PDSocketTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDSocketTool.swift; sourceTree = "<group>"; };
-		C4840BE8208A77830089391F /* LZAnalyzerCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZAnalyzerCenter.swift; sourceTree = "<group>"; };
 		C484F76F20762D7E00111CB5 /* DanmuKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DanmuKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484F77220762D7E00111CB5 /* DanmuKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DanmuKit.h; sourceTree = "<group>"; };
 		C484F77320762D7E00111CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,7 +70,6 @@
 		C484F7DB207697F600111CB5 /* BASentenceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BASentenceModel.swift; sourceTree = "<group>"; };
 		C484F7EB20769A0E00111CB5 /* GBigbangBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBigbangBox.h; sourceTree = "<group>"; };
 		C484F7EC20769A0E00111CB5 /* GBigbangBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBigbangBox.m; sourceTree = "<group>"; };
-		C484F7F32077B61F00111CB5 /* LZDMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZDMManager.swift; sourceTree = "<group>"; };
 		C484F7F72077BB6D00111CB5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		C484F7FF2077C30800111CB5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		C484F8012077C3AE00111CB5 /* Compression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compression.swift; sourceTree = "<group>"; };
@@ -91,8 +77,6 @@
 		C484F8032077C3AE00111CB5 /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		C484F8072077C55700111CB5 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		C484F8082077C96E00111CB5 /* include.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = include.h; sourceTree = "<group>"; };
-		C484F80B2077D27F00111CB5 /* LZBulletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZBulletModel.swift; sourceTree = "<group>"; };
-		C484F80D2077D36D00111CB5 /* LZGiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZGiftModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,13 +91,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0FDA2EAC215B2A7F000D1EEF /* Qie */ = {
+		0FE27377237BDEF30075E166 /* Huya */ = {
 			isa = PBXGroup;
 			children = (
-				0FDA2EAD215B2AAC000D1EEF /* QieManager.swift */,
-				0FDA2ED7215C7FC9000D1EEF /* QieBulletModel.swift */,
+				0F3B167C237BEA8400EEE562 /* huya.js */,
+				0FE27379237BDEF30075E166 /* huya.swift */,
 			);
-			path = Qie;
+			path = Huya;
 			sourceTree = "<group>";
 		};
 		C484F76520762D7E00111CB5 = {
@@ -136,7 +120,7 @@
 		C484F77120762D7E00111CB5 /* DanmuKit */ = {
 			isa = PBXGroup;
 			children = (
-				0FDA2EAC215B2A7F000D1EEF /* Qie */,
+				0FE27377237BDEF30075E166 /* Huya */,
 				C484F8112078886D00111CB5 /* PD */,
 				C484F7F22077B5F900111CB5 /* LZ */,
 				C484F7CA207697F600111CB5 /* BulletGet */,
@@ -192,11 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				C484F80A2077CFEC00111CB5 /* Starscream */,
-				C484F7F32077B61F00111CB5 /* LZDMManager.swift */,
-				C484F80B2077D27F00111CB5 /* LZBulletModel.swift */,
-				C484F80D2077D36D00111CB5 /* LZGiftModel.swift */,
-				C48188C1207898E3009664AA /* Extension+Data.swift */,
-				C4840BE8208A77830089391F /* LZAnalyzerCenter.swift */,
 			);
 			path = LZ;
 			sourceTree = "<group>";
@@ -215,6 +194,7 @@
 				C484F8012077C3AE00111CB5 /* Compression.swift */,
 				C484F8022077C3AE00111CB5 /* SSLSecurity.swift */,
 				C484F8032077C3AE00111CB5 /* WebSocket.swift */,
+				0F3B1680237BEE9700EEE562 /* SSLClientCertificate.swift */,
 			);
 			path = Starscream;
 			sourceTree = "<group>";
@@ -236,10 +216,6 @@
 			children = (
 				C48189342078B26C009664AA /* NSString+InfoGet.h */,
 				C48189332078B26C009664AA /* NSString+InfoGet.m */,
-				C48188BF20788A0E009664AA /* PDDMManager.swift */,
-				C48188C3207899CB009664AA /* PDTransModelTool.swift */,
-				C48188C520789AAC009664AA /* PDBulletModel.swift */,
-				C48189372078BFC3009664AA /* PDSocketTool.swift */,
 			);
 			path = PD;
 			sourceTree = "<group>";
@@ -293,7 +269,7 @@
 				TargetAttributes = {
 					C484F76E20762D7E00111CB5 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -303,6 +279,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = C484F76520762D7E00111CB5;
 			productRefGroup = C484F77020762D7E00111CB5 /* Products */;
@@ -319,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3B167D237BEA8400EEE562 /* huya.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,13 +310,10 @@
 				C484F8042077C3AE00111CB5 /* Compression.swift in Sources */,
 				C484F7DF207697F600111CB5 /* Extension+String.swift in Sources */,
 				C484F7E0207697F600111CB5 /* BAReplyModel.swift in Sources */,
-				C484F80E2077D36D00111CB5 /* LZGiftModel.swift in Sources */,
 				C484F7EA207697F600111CB5 /* BASentenceModel.swift in Sources */,
 				C484F8052077C3AE00111CB5 /* SSLSecurity.swift in Sources */,
 				C484F7E9207697F600111CB5 /* BABulletModel.swift in Sources */,
-				0FDA2ED8215C7FC9000D1EEF /* QieBulletModel.swift in Sources */,
 				C484F7EE20769A0F00111CB5 /* GBigbangBox.m in Sources */,
-				C484F7F42077B61F00111CB5 /* LZDMManager.swift in Sources */,
 				C484F7E1207697F600111CB5 /* Extension+Color.swift in Sources */,
 				C484F77B20762DBD00111CB5 /* DMManager.swift in Sources */,
 				C484F7DD207697F600111CB5 /* BAGiftModel.swift in Sources */,
@@ -348,17 +323,11 @@
 				C484F8062077C3AE00111CB5 /* WebSocket.swift in Sources */,
 				C484F7F82077BB6D00111CB5 /* SwiftyJSON.swift in Sources */,
 				0FDA2EC6215B5915000D1EEF /* Helper.swift in Sources */,
+				0FE2737B237BDEF30075E166 /* huya.swift in Sources */,
 				C484F7DE207697F600111CB5 /* CTBigbangBox.swift in Sources */,
-				C48188C2207898E3009664AA /* Extension+Data.swift in Sources */,
-				C48189382078BFC3009664AA /* PDSocketTool.swift in Sources */,
-				C48188C620789AAC009664AA /* PDBulletModel.swift in Sources */,
 				C484F7E3207697F600111CB5 /* BAAnalyzerCenter.swift in Sources */,
-				C4840BE9208A77830089391F /* LZAnalyzerCenter.swift in Sources */,
-				C48188C020788A0E009664AA /* PDDMManager.swift in Sources */,
 				0FDA2EC7215B5915000D1EEF /* NetWork.swift in Sources */,
-				C48188C4207899CB009664AA /* PDTransModelTool.swift in Sources */,
-				C484F80C2077D27F00111CB5 /* LZBulletModel.swift in Sources */,
-				0FDA2EAE215B2AAC000D1EEF /* QieManager.swift in Sources */,
+				0F3B1681237BEE9700EEE562 /* SSLClientCertificate.swift in Sources */,
 				C484F7E5207697F600111CB5 /* GCDAsyncSocket.m in Sources */,
 				C484F7E2207697F600111CB5 /* BASocketTool.swift in Sources */,
 			);
