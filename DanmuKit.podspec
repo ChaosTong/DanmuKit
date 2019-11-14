@@ -15,5 +15,6 @@ Danmu easy to get, easy to get danmu from douyu and huya
   s.ios.deployment_target = '10.0'
   s.source_files = 'DanmuKit/**/*.{h,m,swift,js}'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
+  s.swift_versions = ['5']
  
 end
