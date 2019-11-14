@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DanmuKit'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'easy to get danmu from douyu & huya'
  
   s.description      = <<-DESC
