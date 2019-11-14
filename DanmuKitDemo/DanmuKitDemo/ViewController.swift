@@ -14,31 +14,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(bullet(_:)), name: NSNotification.Name.init("BANotificationBullet"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(gift(_:)), name: NSNotification.Name.init("BANotificationGift"), object: nil)
-        
-//        BASocketTool.shared.connectSocketWithRoomId(roomId: "288016")
-        Huya.shared.connect("")
-        
-    }
-
-    @objc func gift(_ noti: Notification) {
-        if let dict = noti.userInfo {
-            if let _ = dict["Gift"] as? [BAGiftModel] {
-                
-            }
-        }
-    }
-    
-    @objc func bullet(_ noti: Notification) {
-        if let dict = noti.userInfo {
-            if let array = dict["Bullet"] as? [BABulletModel] {
-                array.forEach({ (m) in
-                    print(m.description)
-                })
-            }
-        }
+//        BASocketTool.shared.connectSocketWithRoomId(roomId: "452628")
+//        BASocketTool.shared.delegate = self
+        Huya.shared.connect("qingwa666")
+        Huya.shared.delegate = self
     }
 
 }
 
+extension ViewController: DanmuRecieveDelegate {
+    func recieveMessages(userInfo: [AnyHashable : Any]?) {
+        if let str = userInfo?["Bullet_HuYa"] as? BABulletModel {
+            print("\(str.nn): \(str.txt)")
+        }
+        if let array = userInfo?["Bullet_DouYu"] as? [BABulletModel] {
+            array.forEach({ (m) in
+                print(m.description)
+            })
+        }
+        if let gift = userInfo?["Gift_Douyu"] as? [BAGiftModel] {
+            gift.forEach({ (m) in
+                print(m.description)
+            })
+        }
+    }
+}

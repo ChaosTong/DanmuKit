@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F3B167D237BEA8400EEE562 /* huya.js in Resources */ = {isa = PBXBuildFile; fileRef = 0F3B167C237BEA8400EEE562 /* huya.js */; };
 		0F3B1681237BEE9700EEE562 /* SSLClientCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B1680237BEE9700EEE562 /* SSLClientCertificate.swift */; };
 		0FDA2EC6215B5915000D1EEF /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2EC4215B5915000D1EEF /* Helper.swift */; };
 		0FDA2EC7215B5915000D1EEF /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA2EC5215B5915000D1EEF /* NetWork.swift */; };
 		0FE2737B237BDEF30075E166 /* huya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE27379237BDEF30075E166 /* huya.swift */; };
-		C48189352078B26C009664AA /* NSString+InfoGet.m in Sources */ = {isa = PBXBuildFile; fileRef = C48189332078B26C009664AA /* NSString+InfoGet.m */; };
-		C48189362078B26C009664AA /* NSString+InfoGet.h in Headers */ = {isa = PBXBuildFile; fileRef = C48189342078B26C009664AA /* NSString+InfoGet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FE273E0237D32B80075E166 /* huya.js in Resources */ = {isa = PBXBuildFile; fileRef = 0FE273DF237D32B80075E166 /* huya.js */; };
 		C484F77420762D7E00111CB5 /* DanmuKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C484F77220762D7E00111CB5 /* DanmuKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C484F77B20762DBD00111CB5 /* DMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F77A20762DBD00111CB5 /* DMManager.swift */; };
 		C484F7DC207697F600111CB5 /* BATransModelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484F7CB207697F600111CB5 /* BATransModelTool.swift */; };
@@ -42,13 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F3B167C237BEA8400EEE562 /* huya.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = huya.js; sourceTree = "<group>"; };
 		0F3B1680237BEE9700EEE562 /* SSLClientCertificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLClientCertificate.swift; sourceTree = "<group>"; };
 		0FDA2EC4215B5915000D1EEF /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		0FDA2EC5215B5915000D1EEF /* NetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
 		0FE27379237BDEF30075E166 /* huya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = huya.swift; sourceTree = "<group>"; };
-		C48189332078B26C009664AA /* NSString+InfoGet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InfoGet.m"; sourceTree = "<group>"; };
-		C48189342078B26C009664AA /* NSString+InfoGet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InfoGet.h"; sourceTree = "<group>"; };
+		0FE273DF237D32B80075E166 /* huya.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = huya.js; sourceTree = "<group>"; };
 		C484F76F20762D7E00111CB5 /* DanmuKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DanmuKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484F77220762D7E00111CB5 /* DanmuKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DanmuKit.h; sourceTree = "<group>"; };
 		C484F77320762D7E00111CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,7 +90,8 @@
 		0FE27377237BDEF30075E166 /* Huya */ = {
 			isa = PBXGroup;
 			children = (
-				0F3B167C237BEA8400EEE562 /* huya.js */,
+				C484F80A2077CFEC00111CB5 /* Starscream */,
+				0FE273DF237D32B80075E166 /* huya.js */,
 				0FE27379237BDEF30075E166 /* huya.swift */,
 			);
 			path = Huya;
@@ -121,8 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				0FE27377237BDEF30075E166 /* Huya */,
-				C484F8112078886D00111CB5 /* PD */,
-				C484F7F22077B5F900111CB5 /* LZ */,
 				C484F7CA207697F600111CB5 /* BulletGet */,
 				C484F80F2077DC0600111CB5 /* CommonFiles */,
 				C484F77A20762DBD00111CB5 /* DMManager.swift */,
@@ -172,14 +167,6 @@
 			path = GCD;
 			sourceTree = "<group>";
 		};
-		C484F7F22077B5F900111CB5 /* LZ */ = {
-			isa = PBXGroup;
-			children = (
-				C484F80A2077CFEC00111CB5 /* Starscream */,
-			);
-			path = LZ;
-			sourceTree = "<group>";
-		};
 		C484F7FE2077C30800111CB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,15 +198,6 @@
 			path = CommonFiles;
 			sourceTree = "<group>";
 		};
-		C484F8112078886D00111CB5 /* PD */ = {
-			isa = PBXGroup;
-			children = (
-				C48189342078B26C009664AA /* NSString+InfoGet.h */,
-				C48189332078B26C009664AA /* NSString+InfoGet.m */,
-			);
-			path = PD;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -231,7 +209,6 @@
 				C484F7ED20769A0F00111CB5 /* GBigbangBox.h in Headers */,
 				C484F77420762D7E00111CB5 /* DanmuKit.h in Headers */,
 				C484F7E6207697F600111CB5 /* GCDAsyncUdpSocket.h in Headers */,
-				C48189362078B26C009664AA /* NSString+InfoGet.h in Headers */,
 				C484F7E7207697F600111CB5 /* GCDAsyncSocket.h in Headers */,
 				C484F8092077C96E00111CB5 /* include.h in Headers */,
 			);
@@ -264,6 +241,7 @@
 		C484F76620762D7E00111CB5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = ChaosTong;
 				TargetAttributes = {
@@ -296,7 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F3B167D237BEA8400EEE562 /* huya.js in Resources */,
+				0FE273E0237D32B80075E166 /* huya.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +295,6 @@
 				C484F7E1207697F600111CB5 /* Extension+Color.swift in Sources */,
 				C484F77B20762DBD00111CB5 /* DMManager.swift in Sources */,
 				C484F7DD207697F600111CB5 /* BAGiftModel.swift in Sources */,
-				C48189352078B26C009664AA /* NSString+InfoGet.m in Sources */,
 				C484F7DC207697F600111CB5 /* BATransModelTool.swift in Sources */,
 				C484F7E4207697F600111CB5 /* GCDAsyncUdpSocket.m in Sources */,
 				C484F8062077C3AE00111CB5 /* WebSocket.swift in Sources */,
@@ -471,7 +448,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DanmuKit",
-					"$(PROJECT_DIR)/DanmuKit/LZ",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/DanmuKit/CommonFiles/Info.plist";
@@ -488,7 +464,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = $SRCROOT;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -508,7 +484,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DanmuKit",
-					"$(PROJECT_DIR)/DanmuKit/LZ",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/DanmuKit/CommonFiles/Info.plist";
@@ -524,7 +499,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = $SRCROOT;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

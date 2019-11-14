@@ -23,7 +23,7 @@ enum BAGiftType: Int {
 
 public struct BAGiftModel {
     
-    var description: String {
+    public var description: String {
         if self.giftType == .Rocket { // || self.giftType == .Plane {
             if hits > 1 {
                 return "\(self.sn) 送给 \(self.dn) \(self.gn) \(self.hits)连击"

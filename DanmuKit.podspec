@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = 'DanmuKit'
-  s.version          = '1.0.3'
-  s.summary          = 'easy to get danmu from douyu panda qie and longzhu'
+  s.version          = '1.0.4'
+  s.summary          = 'easy to get danmu from douyu & huya'
  
   s.description      = <<-DESC
-Danmu easy to get, easy to get danmu from douyu panda qie and longzhu
+Danmu easy to get, easy to get danmu from douyu and huya
                        DESC
  
   s.homepage         = 'https://github.com/ChaosTong/DanmuKit'
@@ -13,7 +13,7 @@ Danmu easy to get, easy to get danmu from douyu panda qie and longzhu
   s.source           = { :git => 'https://github.com/ChaosTong/DanmuKit.git', :tag => s.version.to_s }
  
   s.ios.deployment_target = '10.0'
-  s.source_files = 'DanmuKit/**/*.{h,m,swift}'
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
+  s.source_files = 'DanmuKit/**/*.{h,m,swift,js}'
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
  
 end

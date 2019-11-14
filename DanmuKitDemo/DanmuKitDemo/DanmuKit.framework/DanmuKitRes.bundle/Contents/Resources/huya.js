@@ -39,7 +39,7 @@ function test(t) {
         var h = TafMx.UriMapping[a.iUri];
         h && (h = new h);
         h.readFrom(e);
-        return JSON.stringify(h)
+        return h.sContent
     default:
     return "HUYA.EWebSocketCommandType.Default"
     }

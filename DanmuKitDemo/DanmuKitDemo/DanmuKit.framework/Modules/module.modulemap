@@ -1,0 +1,11 @@
+framework module DanmuKit {
+  umbrella header "DanmuKit.h"
+
+  export *
+  module * { export * }
+}
+
+module DanmuKit.Swift {
+    header "DanmuKit-Swift.h"
+    requires objc
+}

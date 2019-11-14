@@ -36,8 +36,8 @@ public class BAAnalyzerCenter: NSObject {
     
     public func beginObserving() {
         isAnalyzing = true
-        NotificationCenter.default.addObserver(self, selector: #selector(bullet(_:)), name: NSNotification.Name.init("BANotificationBullet"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(gift(_:)), name: NSNotification.Name.init("BANotificationGift"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(bullet(_:)), name: NSNotification.Name.init("BANotificationBullet"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(gift(_:)), name: NSNotification.Name.init("BANotificationGift"), object: nil)
         repeatTimer.schedule(deadline: DispatchTime.now(), repeating: 5.0)
         repeatTimer.setEventHandler {
             self.sortData()

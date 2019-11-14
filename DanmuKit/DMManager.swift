@@ -18,3 +18,7 @@ public class DMManager: NSObject {
         print("hello danmukit 22")
     }
 }
+
+public protocol DanmuRecieveDelegate {
+    func recieveMessages(userInfo: [AnyHashable : Any]?)
+}

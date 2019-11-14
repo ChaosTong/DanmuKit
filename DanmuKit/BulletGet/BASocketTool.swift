@@ -37,6 +37,7 @@ public class BASocketTool: NSObject {
     var line = 0
     var isReachable = false
     var memoryWarningCount = 0
+    public var delegate: DanmuRecieveDelegate?
     
     public class var shared: BASocketTool {
         struct Static {
@@ -179,9 +180,9 @@ extension BASocketTool: GCDAsyncSocketDelegate {
                 contentData.append(data)
                 BATransModelTool().transModelWithData(data: contentData, ignoreFreeGift: ignoreFreeGift, complete: { (array, modelType) in
                     if modelType == .Bullet {
-                        NotificationCenter.default.post(name: NSNotification.Name.init("BANotificationBullet"), object: nil, userInfo: ["Bullet" : array])
+                        self.delegate?.recieveMessages(userInfo: ["Bullet_DouYu" : array])
                     } else if modelType == .Gift {
-                        NotificationCenter.default.post(name: NSNotification.Name.init("BANotificationGift"), object: nil, userInfo: ["Gift" : array])
+                        self.delegate?.recieveMessages(userInfo: ["Gift_DouYu" : array])
                     } else if modelType == .Reply {
                         if let f = array.first as? BAReplyModel {
                             self.handleServiceReply(replayModel: f)

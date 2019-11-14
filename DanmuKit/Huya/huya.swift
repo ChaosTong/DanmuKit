@@ -22,14 +22,15 @@ public class Huya: NSObject, WebSocketDelegate {
     var huyaUserInfo = ("", "", "")
     var lz_socket: WebSocket?
     var heartbeatTimer: DispatchSourceTimer?
+    public var delegate: DanmuRecieveDelegate?
     private let timerQueue = DispatchQueue(label: "com.xjbeta.iina+.WebSocketKeepLive")
 
-    
+
     public func connect(_ room: String) {
-        if let huyaFilePath = Bundle.main.path(forResource: "huya", ofType: "js") {
+        if let huyaFilePath = Bundle.main.path(forResource: "Frameworks/DanmuKit.framework/huya", ofType: "js") {
             huyaJSContext?.evaluateScript(try? String(contentsOfFile: huyaFilePath))
         }
-        Enough.requestForHTML(method: .get, url: "https://m.huya.com/qingwa666", params: nil, isData: nil, headers: ["User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"], isRecur: false) { (data, error) in
+        Enough.requestForHTML(method: .get, url: "https://m.huya.com/\(room)", params: nil, isData: nil, headers: ["User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"], isRecur: false) { (data, error) in
             guard let data = data else { return }
             guard let html = String.init(data: data, encoding: .utf8) else { return }
             
@@ -72,12 +73,12 @@ public class Huya: NSObject, WebSocketDelegate {
             lz_socket?.disconnect()
             heartbeatTimer?.cancel()
             heartbeatTimer = nil
-            print("---断开龙珠弹幕---")
+            print("---断开虎牙弹幕---")
         }
     }
     
     public func websocketDidConnect(socket: WebSocketClient) {
-        print("---成功连接龙珠弹幕---")
+        print("---成功连接虎牙弹幕---")
         huyaJSContext?.evaluateScript("""
                         var wsUserInfo = new HUYA.WSUserInfo;
                         wsUserInfo.lSid = "\(huyaUserInfo.0)";
@@ -100,9 +101,14 @@ public class Huya: NSObject, WebSocketDelegate {
     public func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
 //        print("got some data: \(data.count)")
         let bytes = [UInt8](data)
-        if let re = huyaJSContext?.evaluateScript("test(\(bytes));"),
-            re.isString {
-            let str = re.toString() ?? ""
+        if let re = huyaJSContext?.evaluateScript("test(\(bytes));"), let json = try? JSONSerialization.jsonObject(with: Data((re.toString() ?? "").utf8), options: []) as? [String: Any] {
+            guard let str = json["sContent"] as? String else {
+                return
+            }
+            let userInfo = json["tUserInfo"] as? [String: Any]
+            let nn = userInfo?["sNickName"] as? String ?? ""
+            let uid = userInfo?["lUid"] as? String ?? ""
+            let bullet = BABulletModel.init(dict: ["nn": nn, "txt": str, "uid": uid])
             guard str != "HUYA.EWebSocketCommandType.EWSCmd_RegisterRsp" else {
                 print("huya websocket inited EWSCmd_RegisterRsp")
                 return
@@ -112,46 +118,11 @@ public class Huya: NSObject, WebSocketDelegate {
                 return
             }
             guard !str.contains("分享了直播间，房间号"), !str.contains("录制并分享了小视频"), !str.contains("进入直播间"), !str.contains("刚刚在打赏君活动中") else { return }
-//            sendDM(str)
-            print(str)
+            delegate?.recieveMessages(userInfo: ["Bullet_HuYa" : bullet])
         }
     }
     
     public func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        transModelWithContents(data: text) { (array, modelType) in
-            if modelType == .Bullet {
-                NotificationCenter.default.post(name: NSNotification.Name.init("LZNotificationBullet"), object: nil, userInfo: ["Bullet" : array])
-            }
-        }
     }
     
-    func transModelWithContents(data: String, complete: @escaping transCompleteBlock) {
-        
-//        let data: Data = data.data(using: .utf8)!
-//        let json = JSON.init(data: data)
-//
-//        var bulletArray = [LZBulletModel]()
-//        var giftArray = [LZGiftModel]()
-//
-//        if let arr = json.array {
-//            for v in arr {
-//                let type = v["type"].stringValue
-//                if type == "chat" {
-//                    let m = LZBulletModel.init(v: v)
-//                    bulletArray.append(m)
-//                }
-//                if type == "gift" {
-//                    let m = LZGiftModel.init(v: v)
-//                    giftArray.append(m)
-//                }
-//            }
-//        }
-//
-//        if bulletArray.count > 0 {
-//            complete(bulletArray, .Bullet)
-//        }
-//        if giftArray.count > 0 {
-//            complete(giftArray, .Gift)
-//        }
-    }
 }
