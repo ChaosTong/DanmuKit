@@ -5,3 +5,8 @@
 ## Usage
 
 see the demo 
+
+## TODO
+
+- [ ] 合并短时间相似度高的弹幕
+- [ ] 使用CoreML 过滤阴阳怪气内容
