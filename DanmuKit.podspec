@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = 'DanmuKit'
-  s.version          = '1.0.5'
-  s.summary          = 'easy to get danmu from douyu & huya'
+  s.version          = '1.0.6'
+  s.summary          = 'easy to get danmu from douyu'
  
   s.description      = <<-DESC
-Danmu easy to get, easy to get danmu from douyu and huya
+Danmu easy to get, easy to get danmu from douyu
                        DESC
  
   s.homepage         = 'https://github.com/ChaosTong/DanmuKit'
