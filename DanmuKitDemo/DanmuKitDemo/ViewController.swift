@@ -14,10 +14,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        BASocketTool.shared.connectSocketWithRoomId(roomId: "452628")
-//        BASocketTool.shared.delegate = self
-        Huya.shared.connect("qingwa666")
-        Huya.shared.delegate = self
+        BASocketTool.shared.connectSocketWithRoomId(roomId: "156277")
+        BASocketTool.shared.delegate = self
+//        Huya.shared.connect("a16789")
+//        Huya.shared.delegate = self
     }
 
 }

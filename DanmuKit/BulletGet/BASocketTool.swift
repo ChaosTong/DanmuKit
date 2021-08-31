@@ -18,15 +18,16 @@ typealias PostPack = postPack
 let BAReadTimeOut: TimeInterval = -1
 let BAPostCode = 0x2b1;
 let BAEndCode = 0;
-let BAServicePort1: UInt16 = 8601; //8601
-let BAServicePort2: UInt16 = 8602; //8602
-let BAServiceAddress = "openbarrage.douyutv.com"
+let BAServicePort1: UInt16 = 8501; //8601
+let BAServicePort2: UInt16 = 8502; //8602
+let BAServiceAddress = "danmuproxy.douyu.com"
 
 
 public class BASocketTool: NSObject {
     
     var ignoreFreeGift = false
-    var socket = GCDAsyncSocket()
+//    var socket = GCDAsyncSocket()
+    var socket: WebSocket?
 //    let defaultSocket: BASocketTool? = nil
     
     var heartbeatTimer: DispatchSourceTimer! = DispatchSource.makeTimerSource(flags:DispatchSource.TimerFlags.init(rawValue: 0) , queue: nil)
@@ -49,23 +50,18 @@ public class BASocketTool: NSObject {
      链接服务器
      */
     public func connectSocketWithRoomId(roomId: String) {
-        socket = GCDAsyncSocket.init(delegate: self, delegateQueue: DispatchQueue.main)
         self.roomId = roomId
-        if socket.isConnected {
+        if let so = socket, so.isConnected {
             cutoff()
         }
+        let request = URLRequest(url: URL(string: "wss://\(BAServiceAddress):\(BAServicePort1)")!)
+        socket = WebSocket.init(request: request)
+        socket?.delegate = self
         // 1. 与服务器的socket链接起来
-        do {
-            try socket.connect(toHost: BAServiceAddress, onPort: BAServicePort2)
-            
-            serviceConnected = true
-            memoryWarningCount = 0
+        socket?.connect()
+        serviceConnected = true
+        memoryWarningCount = 0
 //            ignoreFreeGift = false
-            
-            connectRoom()
-        } catch {
-            print("connect error is:\(error)")
-        }
     }
     /**
      链接房间弹幕服务器
@@ -73,7 +69,7 @@ public class BASocketTool: NSObject {
     func connectRoom() {
         print("链接服务器")
         let pack = ("type@=loginreq/roomid@=\(roomId)/").packToData
-        socket.write(pack, withTimeout: BAReadTimeOut, tag: 1)
+        socket?.write(data: pack)
     }
     /**
      入组
@@ -81,7 +77,7 @@ public class BASocketTool: NSObject {
     func joinGroup() {
         print("发送入组消息")
         let pack = ("type@=joingroup/rid@=\(roomId)/gid@=-9999/").packToData
-        socket.write(pack, withTimeout: BAReadTimeOut, tag: 1)
+        socket?.write(data: pack)
     }
     /**
      开始发送心跳消息
@@ -95,7 +91,7 @@ public class BASocketTool: NSObject {
     }
     @objc func heartBeat() {
         let pack = ("type@=keeplive/tick@=%\(String().timeString)/").packToData
-        socket.write(pack, withTimeout: BAReadTimeOut, tag: 1)
+        socket?.write(data: pack)
     }
     /**
      断开链接
@@ -104,9 +100,9 @@ public class BASocketTool: NSObject {
         print("断开链接")
         line = 0
         let pack = "type@=logout/".packToData
-        socket.write(pack, withTimeout: BAReadTimeOut, tag: 1)
+        socket?.write(data: pack)
         if heartbeatTimer != nil { heartbeatTimer.suspend() }
-        socket.disconnect()
+        socket?.disconnect()
     }
     /**
      更换线路
@@ -118,15 +114,12 @@ public class BASocketTool: NSObject {
             
             let servicePort = self.line == 1 ? BAServicePort1 : BAServicePort2
             // 1. 与服务器的socket链接起来
-            do {
-                try self.socket.connect(toHost: BAServiceAddress, onPort: servicePort)
-                print("客户端连接服务器成功")
-                self.serviceConnected = true
-                self.connectRoom()
-            } catch {
-                print("客户端连接服务器失败")
-                self.serviceConnected = false
-            }
+            let request = URLRequest(url: URL(string: "wss://\(BAServiceAddress):\(servicePort)")!)
+            self.socket = WebSocket.init(request: request)
+            self.socket?.delegate = self
+            print("客户端连接服务器成功")
+            self.serviceConnected = true
+            self.socket?.connect()
         }
     }
     /**
@@ -141,6 +134,7 @@ public class BASocketTool: NSObject {
             startHeartbeat()
         }
     }
+    
     func receiveMemoryWarning() {
         memoryWarningCount += 1
         if memoryWarningCount == 1 {
@@ -150,16 +144,16 @@ public class BASocketTool: NSObject {
     }
 }
 
-extension BASocketTool: GCDAsyncSocketDelegate {
+extension BASocketTool: WebSocketDelegate {
     /**
      断开连接
      
      @param sock socket
      @param err 错误信息
      */
-    public func socketDidDisconnect(_ sock: GCDAsyncSocket, withError err: Error?) {
-        print("连接失败: \(String(describing: err))")
-        if err.debugDescription.contains("Code=7") { //服务器认为心跳包问题断开, 重连
+    public func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        print("连接失败: \(String(describing: error))")
+        if error.debugDescription.contains("Code=7") { //服务器认为心跳包问题断开, 重连
             connectSocketWithRoomId(roomId: roomId)
         } else {
             print("正常断开")
@@ -172,7 +166,7 @@ extension BASocketTool: GCDAsyncSocketDelegate {
      @param data 数据
      @param tag tag
      */
-    public func socket(_ sock: GCDAsyncSocket, didRead data: Data, withTag tag: Int) {
+    public func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
         if data.count != 0 {
             var endCode: UInt8 = 0
             data.copyBytes(to: &endCode , from: data.count - 1 ..< data.count)
@@ -194,7 +188,6 @@ extension BASocketTool: GCDAsyncSocketDelegate {
                 contentData.append(data)
             }
         }
-        self.socket.readData(withTimeout: BAReadTimeOut, tag: 0)
     }
     /**
      数据发送成功
@@ -202,10 +195,10 @@ extension BASocketTool: GCDAsyncSocketDelegate {
      @param sock socket
      @param tag tag
      */
-    public func socket(_ sock: GCDAsyncSocket, didWriteDataWithTag tag: Int) {
-        //发送完数据手动读取，-1不设置超时
-        sock.readData(withTimeout: BAReadTimeOut, tag: tag)
-    }
+//    public func socket(_ sock: GCDAsyncSocket, didWriteDataWithTag tag: Int) {
+//        //发送完数据手动读取，-1不设置超时
+//        sock.readData(withTimeout: BAReadTimeOut, tag: tag)
+//    }
     /**
      连接成功
      @discussion 客户端链接服务器端成功, 客户端获取地址和端口号
@@ -213,9 +206,15 @@ extension BASocketTool: GCDAsyncSocketDelegate {
      @param host IP
      @param port 端口号
      */
-    public func socket(_ sock: GCDAsyncSocket, didConnectToHost host: String, port: UInt16) {
+    public func websocketDidConnect(socket: WebSocketClient) {
         let socket = BASocketTool.shared
         socket.socket = self.socket
+        connectRoom()
     }
+    
+    public func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        
+    }
+    
     
 }
